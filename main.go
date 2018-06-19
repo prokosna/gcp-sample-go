@@ -2,21 +2,17 @@
 
 package main
 
-import "github.com/labstack/echo"
-import "github.com/labstack/echo/middleware"
+import (
+	"github.com/labstack/echo/middleware"
+	"github.com/prokosna/gcp-sample-go/lib"
+)
 
-func createMux() *echo.Echo {
-	e := echo.New()
-
+func main() {
+	e := lib.CreateMux()
 	e.Use(middleware.Recover())
 	e.Use(middleware.Logger())
 	e.Use(middleware.Gzip())
 
 	e.Static("/", "public")
-
-	return e
-}
-
-func main() {
 	e.Logger.Fatal(e.Start(":8080"))
 }

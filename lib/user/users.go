@@ -1,4 +1,4 @@
-package main
+package user
 
 import (
 	"net/http"
@@ -18,7 +18,7 @@ var (
 	users map[string]user
 )
 
-func init() {
+func InitRoute(e *echo.Echo) {
 	users = map[string]user{
 		"1": user{
 			ID:   "1",
