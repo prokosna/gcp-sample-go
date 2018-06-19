@@ -1,7 +1,7 @@
 application: gcp-sample-go  # defined when you create your app using google dev console
 version: alpha                  # you can run multiple versions of an app and A/B test
 runtime: go                     # see https://cloud.google.com/appengine/docs/go/
-api_version: go1.9                # used when appengine supports different go versions
+api_version: go1.8                # used when appengine supports different go versions
 service: satori
 
 default_expiration: "1d"        # for CDN serving of static files (use url versioning if long!)
